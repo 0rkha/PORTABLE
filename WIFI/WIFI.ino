@@ -5,13 +5,11 @@
 void setup() {
  
   Serial.begin(115200);                            //Serial connection
-  WiFi.begin("조강준의 iPhone", "hello world");   //WiFi connection
+  WiFi.begin("A", "aspirinsmj");   //WiFi connection
  
   while (WiFi.status() != WL_CONNECTED) {  //Wait for the WiFI connection completion
- 
     delay(500);
     Serial.println("Waiting for connection");
- 
   }
  
 }
