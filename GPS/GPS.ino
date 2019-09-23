@@ -7,18 +7,18 @@ int i;
 int val;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   gpsSerial.begin(9600);
   delay(100);
 }
 
 void loop() {
-  if (gpsSerial.available()){
+  while (gpsSerial.available()){
     char val2 = gpsSerial.read() ;
     bool isGPGGA = 1;
     if (val2 == '\n'){
       for(i=0; i<6; i++)
-      isGPGGA &= (cmd[i]==buf[i]);
+        isGPGGA &= (cmd[i]==buf[i]);
       if(isGPGGA)
         Serial.println(buf);
       buf="";
